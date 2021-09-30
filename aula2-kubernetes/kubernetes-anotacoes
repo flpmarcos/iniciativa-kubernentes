@@ -1,0 +1,33 @@
+O Kubernetes é formado por um cluster (conjunto de maquinas)
+
+Que é separadao de duas formas:
+
+Control Plane (Necessário ter mais de um control plane no cluster para ter redundância)
+    - Gerencia os nodes e orquestra todo o cluster
+
+        - Kube Api Server -> Responsavel por receber toda a comunicação com o cluster 
+                             Quando eu executo um comando (kubectl ...)é com ele que eu estou me comunincando
+        
+        - ETCD ->   Banco de dados chave/valor que armazenas as informações do todo.
+        
+        - Kube Scheduler -> Componente que organiza onde cada processo vai ser executado, analisa qual node
+                            atende as especificações e onde será executado tal processo.
+        
+        - Kube Controller Manager-> Executa e gerência todos os controladores do kubernetes
+                                    Elemento que administra as tomadas de decição do kubernetes
+                                    (Autenticações, autorizações e admissões)
+
+Nodes
+    - No node é onde são executados as aplicações
+
+        - Kubelet ->    Agentes de inspeção no node, ele que responsavel para garantir a execução dos containers
+                        e comunicar com o Kube Api Server para reportar status.
+
+        - Kube Proxy -> Responsavel com as comunicações de rede com o cluster 
+
+        - Container Runtime -> especificações necessarias para que um container seja executado.
+
+
+
+
+

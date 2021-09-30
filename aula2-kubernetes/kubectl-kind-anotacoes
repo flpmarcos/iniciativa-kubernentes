@@ -1,0 +1,25 @@
+##################### KIND
+
+- kind é utilizado para simular um ambiente kubernetes local usando container mais parecido com o ambiente de PRD possivel
+
+sudo curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.11.1/kind-linux-amd64
+sudo chmod +x ./kind
+sudo mv ./kind /mnt/c/project/kind
+
+- Criar primeiro cluster kubernetes
+kind create cluster --name meucluster --config cluster.yaml
+
+- Listar clusters criados
+kind get clusters
+
+- Deletar um cluster 
+kind delete cluster --name meucluster
+
+##################### KUBECTL
+
+- Arquivo de configuracao para acesso do kubectl no cluster kubernetes
+.kube/config
+
+- Listar nós do cluster
+kubectl get nodes
+
