@@ -61,6 +61,16 @@ kubectl rollout history deployment meudeployment
 kubectl rollout undo deployment meudeployment
 
 
-####### SERVICES
+####### TIPOS DE SERVICES
+ClusterIP -> Gera comunicacao interna (Banco de dados -> API)
+NodePort -> Cria uma rede com acesso externo, Acesso geralmente realizado por porta
+            Range de porta 30000-32777
+LoadBalancer -> Cria um rede com acesso Wan, Geralmente utilizado para servicos em nuvem
+
+- Listar servicos
+kubectl get services
+
+
+
 
 

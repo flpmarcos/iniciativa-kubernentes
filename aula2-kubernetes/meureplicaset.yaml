@@ -1,0 +1,22 @@
+# Escalabilidade e resiliência
+apiVersion : apps/v1
+kind: ReplicaSet
+metadata:
+  name: meureplicaset
+spec:
+  replicas: 6
+  # Funcionalidade do selector
+  selector: 
+    matchLabels:
+      app: web
+    template:
+      metadata:
+        # O nome da label tem que igual ao do replica set
+        labels:
+          app: web
+      spec:
+        containers:
+          - name: web
+            image: kubedevio/web-page:blue
+            ports:
+              - containerPort: 80

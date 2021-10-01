@@ -1,0 +1,34 @@
+# Todo manifesto do kubernetes tem 4 campos obrigatorios
+# apiVersion -> define qual a versao de api vou usar no kubernetes
+# Para saber quais grupos de api estão disponiveis dê o comando - kubectl api-resources
+apiVersion: v1
+# kind -> Tipo de objeto que está sendo criado
+kind: Pod
+# metadata -> Os metadados do objeto
+metadata:
+  name: meupod
+# spec -> Coloca a especificacao do objeto no caso do pod define os containers
+spec:
+  containers:
+    - name: web
+      image: kubedevio/web-page:blue
+      ports:
+        - containerPort: 80
+# Comando que faz a separacao entre o comandos
+...
+apiVersion: v1
+# kind -> Tipo de objeto que está sendo criado
+kind: Pod
+# metadata -> Os metadados do objeto
+metadata:
+  name: meusegundopod
+  # Comando bastante util para agrupos os pods com por sua funcionalidades no exemplo essa é uma aplicacao web
+  labels:
+      app: web
+# spec -> Coloca a especificacao do objeto no caso do pod define os containers
+spec:
+  containers:
+    - name: web
+      image: kubedevio/web-page:blue
+      ports:
+        - containerPort: 80
